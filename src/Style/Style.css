@@ -1,0 +1,158 @@
+/*ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ
+# General element
+ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ*/
+@font-face {
+  font-family: Helvetica;
+  src: url("./Fonts/Helvetica-Light.ttf") format(truetype);
+  font-weight: 300;
+}
+@font-face {
+  font-family: Helvetica;
+  src: url("./Fonts/Helvetica.ttf") format(truetype);
+  font-weight: 400;
+}
+@font-face {
+  font-family: Helvetica;
+  src: url("./Fonts/Helvetica-Bold.ttf") format(truetype);
+  font-weight: 700;
+}
+@font-face {
+  font-family: HelveticaNeueLTArabic;
+  src: url("./Fonts/HelveticaNeueLTArabic-Bold.ttf") format(truetype);
+  font-weight: 700;
+}
+@font-face {
+  font-family: HelveticaNeueLTArabic;
+  src: url("./Fonts/HelveticaNeueLTArabic-Roman.ttf") format(truetype);
+  font-weight: 400;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: var(--violet-600) !important;
+}
+html {
+  scroll-behavior: smooth;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+ul {
+  list-style: none;
+}
+a {
+  color: #000000;
+  text-decoration: none;
+}
+a:hover,
+a:active,
+a:focus {
+  outline: none;
+  text-decoration: none;
+}
+p {
+  color: var(--main-p-color);
+  line-height: 1.8;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+/*ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ
+  # container
+  ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ*/
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+/*Mobile Screen*/
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+/*Tab Screen*/
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+/*PC Screen*/
+@media (min-width: 1200px) {
+  .container {
+    width: 1180px;
+  }
+}
+@media (min-width: 1400px) {
+  .container {
+    width: 1380px;
+  }
+}
+@media (min-width: 1600px) {
+  .container {
+    width: 1580px;
+  }
+}
+.content-Container {
+  position: relative;
+  padding-bottom: var(--main-padding-top);
+  padding-top: var(--main-padding-top);
+}
+/*ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ
+# Scroll bar
+ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ*/
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background-color: #fff;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--main-color);
+  backdrop-filter: blur(50px);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #000000;
+}
+.hideScroll::-webkit-scrollbar {
+  display: none;
+}
+.TopPaddingTricker {
+  padding-top: calc(var(--main-padding-top) * 4) !important;
+}
+.BottomPaddingTricker {
+  padding-bottom: calc(var(--main-padding-bottom) * 2) !important;
+}
+/*ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ
+# sweetalert2 
+ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ*/
+.custom-popup {
+  background-color: #332933;
+  color: var(--White-600);
+}
+.custom-confirm-button {
+  background-color: var(--purple-500);
+  color: var(--violet-500);
+  font-weight: 400;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  color: rgba(0, 0, 0, 0);
+  opacity: 1;
+  display: block;
+  /* background: url("../../public/Images/Calendar.png") no-repeat; */
+  width: 20px;
+  height: 20px;
+  border-width: thin;
+}

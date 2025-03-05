@@ -1,5 +1,6 @@
 import { redirect } from "next/navigation";
 
-export default function page() {
+function notFound() {
   return redirect(`/en`);
 }
+export default notFound;
