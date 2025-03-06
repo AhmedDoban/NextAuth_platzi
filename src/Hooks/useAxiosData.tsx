@@ -9,7 +9,7 @@ interface FetchOptions {
   setProgress?: (progress: number) => void;
 }
 
-const useGetData = async <T = unknown,>({
+const useAxiosData = async <T = unknown,>({
   endpoint,
   method = "GET",
   data,
@@ -51,4 +51,4 @@ const useGetData = async <T = unknown,>({
   }
 };
 
-export default useGetData;
+export default useAxiosData;

@@ -1,4 +1,4 @@
-import useGetData from "@/Hooks/useGetData";
+import useFetchData from "@/Hooks/useFetchData";
 // import { useLocale } from "next-intl";
 // import { useAllProductsQuery } from "@/Toolkit/Slices/ProductsSlice";
 import { getTranslations, getLocale } from "next-intl/server";
@@ -9,7 +9,7 @@ const Page = async ({ params }) => {
   const localActive = await getLocale(); // in case of using the server side
   const Translate = await getTranslations({ locale });
   // const Translate2 = await getTranslations({ locale, namespace: "Navbar" }); // in case of use the spacific data in translation file
-  const data = await useGetData({ endpoint: "/", method: "GET" });
+  const data = await useFetchData({ endpoint: "/", method: "GET" });
 
   // const Translate = useTranslations(); in the case of using the client side
   // const Translate = useTranslations("Navbar"); in the case of using the client side and use the spacific data in translation file
