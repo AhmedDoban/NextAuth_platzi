@@ -5,6 +5,7 @@ import { Suspense } from "react";
 import Loading from "./loading";
 import ToastProvider from "@/Toast/ToastProvider";
 import StoreProvider from "@/Toolkit/StoreProvider";
+import { SessionProvider } from "next-auth/react";
 
 export const metadata: Metadata = {
   title: "Next 14 Template",
@@ -33,9 +34,11 @@ async function RootLayout({
       >
         <Suspense fallback={<Loading />}>
           <ToastProvider>
-            <NextIntlClientProvider messages={messages}>
-              <StoreProvider>{children}</StoreProvider>
-            </NextIntlClientProvider>
+            <SessionProvider>
+              <NextIntlClientProvider messages={messages}>
+                <StoreProvider>{children}</StoreProvider>
+              </NextIntlClientProvider>
+            </SessionProvider>
           </ToastProvider>
         </Suspense>
       </body>

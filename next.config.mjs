@@ -5,7 +5,7 @@ const withNextIntl = createNextIntlPlugin();
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["example.com"],
+    domains: ["example.com", "i.imgur.com", "avatars.githubusercontent.com"],
   },
   env: {
     _next_intl_trailing_slash: "/",

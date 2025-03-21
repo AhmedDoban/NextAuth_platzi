@@ -138,12 +138,12 @@ p {
 # sweetalert2 
 ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ*/
 .custom-popup {
-  background-color: #332933;
+  background-color: #fff;
   color: var(--White-600);
 }
 .custom-confirm-button {
-  background-color: var(--purple-500);
-  color: var(--violet-500);
+  background-color: cornflowerblue;
+  color: #fff;
   font-weight: 400;
 }
 

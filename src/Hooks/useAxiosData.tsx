@@ -1,5 +1,5 @@
 import axios from "axios";
-import { cookies } from "next/headers";
+import { getCookie } from "cookies-next";
 
 interface FetchOptions {
   endpoint: string;
@@ -16,8 +16,8 @@ const useAxiosData = async <T = unknown,>({
   sendFile = false,
   setProgress,
 }: FetchOptions): Promise<T> => {
-  const token = cookies().get("Template_Token")?.value;
-  const language = cookies().get("NEXT_LOCALE")?.value || "en";
+  const token = getCookie("Template_Token");
+  const language = getCookie("NEXT_LOCALE") || "en";
   const url = `${process.env.NEXT_PUBLIC_API}${endpoint}`;
 
   try {
