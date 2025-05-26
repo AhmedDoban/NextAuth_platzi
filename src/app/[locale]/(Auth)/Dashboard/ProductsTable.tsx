@@ -33,7 +33,9 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
+import Link from "next/link";
+import DeleteProduct from "@/components/Btns/DeleteProduct";
 
 export type Product = {
   id: number;
@@ -42,16 +44,7 @@ export type Product = {
   email: string;
 };
 
-export function ProductsTable({
-  Products,
-  HandleDlete,
-  setUpdateOpen,
-}: {
-  Products: Array<Product>;
-  HandleDlete: any;
-  setUpdateOpen: any;
-}) {
-  const router = useRouter();
+export function ProductsTable({ Products }: { Products: Array<Product> }) {
   const searchParams = useSearchParams();
   const pathname = usePathname();
 
@@ -168,19 +161,16 @@ export function ProductsTable({
             <button>
               <Eye size={18} />
             </button>
-            <button
-              onClick={() => {
-                setUpdateOpen(true);
-                router.push(
-                  pathname + "?" + createQueryString("id", id.toString())
-                );
-              }}
+            <Link
+              href={`${pathname}/edit/${id}?${createQueryString(
+                "locale",
+                searchParams.get("locale") || "en"
+              )}`}
+              className="text-blue-500 hover:text-blue-700"
             >
               <Pencil size={18} />
-            </button>
-            <button onClick={() => HandleDlete(id)}>
-              <Trash size={18} />
-            </button>
+            </Link>
+            <DeleteProduct id={id} />
           </div>
         );
       },

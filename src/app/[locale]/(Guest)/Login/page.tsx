@@ -21,7 +21,7 @@ const LoginForm = () => {
         </h2>
 
         <Formik
-          initialValues={{ email: "", password: "" }}
+          initialValues={{ email: "john@mail.com", password: "changeme" }}
           validationSchema={Yup.object({
             email: Yup.string()
               .email("Invalid email")
