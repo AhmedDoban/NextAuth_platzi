@@ -10,7 +10,7 @@ export function middleware(request: NextRequest) {
 
   const ChechAuth =
     request.cookies.get("Template_Cookies")?.value !== undefined ||
-    request.cookies.get("authjs.session-token")?.value !== undefined;
+    request.cookies.get("__Secure-authjs.session-token")?.value !== undefined;
 
   const AuthRoutes = /()/gi;
   const GuestRoutes = /(Login)/gi;
