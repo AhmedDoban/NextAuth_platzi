@@ -14,12 +14,13 @@ export const metadata: Metadata = {
 
 async function RootLayout({
   children,
-  params: { locale },
+  params,
 }: {
   children: React.ReactNode;
   params: { locale: string };
 }) {
   const messages = await getMessages();
+  const { locale } = await params;
 
   return (
     <html lang={locale}>

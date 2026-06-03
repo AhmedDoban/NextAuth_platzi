@@ -11,8 +11,8 @@ const useFetchData = async <T = unknown,>({
   method = "GET",
   data,
 }: FetchOptions): Promise<T> => {
-  const token = cookies().get("Template_Token")?.value;
-  const language = cookies().get("NEXT_LOCALE")?.value || "en";
+  const token = (await cookies()).get("Template_Token")?.value;
+  const language = (await cookies()).get("NEXT_LOCALE")?.value || "en";
   const url = `${process.env.NEXT_PUBLIC_API}${endpoint}`;
 
   try {

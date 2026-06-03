@@ -16,8 +16,8 @@ const useAxiosData = async <T = unknown,>({
   sendFile = false,
   setProgress,
 }: FetchOptions): Promise<T> => {
-  const token = getCookie("Template_Token");
-  const language = getCookie("NEXT_LOCALE") || "en";
+  const token = await getCookie("Template_Token");
+  const language = (await getCookie("NEXT_LOCALE")) || "en";
   const url = `${process.env.NEXT_PUBLIC_API}${endpoint}`;
 
   try {
@@ -37,7 +37,7 @@ const useAxiosData = async <T = unknown,>({
         ? (progressEvent) => {
             if (setProgress && progressEvent.total) {
               const percentCompleted = Math.round(
-                (progressEvent.loaded / progressEvent.total) * 100
+                (progressEvent.loaded / progressEvent.total) * 100,
               );
               setProgress(percentCompleted);
             }
