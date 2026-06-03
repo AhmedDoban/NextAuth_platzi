@@ -3,9 +3,10 @@ import { getRequestConfig } from "next-intl/server";
 
 const locales = ["en", "ar"];
 
-export default getRequestConfig(async ({ locale }) => {
-  if (!locales.includes(locale as any)) notFound();
+export default async function getMessages({ locale }: { locale: string }) {
+  if (!locales.includes(locale)) notFound();
+
   return {
     messages: (await import(`./Messages/${locale}.json`)).default,
   };
-});
+}
